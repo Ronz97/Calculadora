@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Calculadora/app/src/main/res/drawable/botao_number_click.xml" value="0.37395833333333334" />
+        <entry key="..\:/Github/Calculadora/app/src/main/res/drawable/shape_numero_normal.xml" value="0.37395833333333334" />
+        <entry key="..\:/Github/Calculadora/app/src/main/res/drawable/shape_numero_selecionado.xml" value="0.37395833333333334" />
         <entry key="..\:/Github/Calculadora/app/src/main/res/layout/activity_main.xml" value="0.19021739130434784" />
       </map>
     </option>
