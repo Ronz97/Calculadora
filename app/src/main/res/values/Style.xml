@@ -16,7 +16,7 @@
 
 
     </style>
-    <style name="Number_Buttom">
+    <style name="Number_Buttom" parent="Contairner_Buttom">
         <item name="android:background">@color/white</item>
         <item name="android:textColor">@color/black</item>
     </style>
