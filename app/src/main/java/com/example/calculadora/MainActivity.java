@@ -37,6 +37,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         subtracao.setOnClickListener(this);
         multiplicacao.setOnClickListener(this);
 
+        botao_limpar.setOnClickListener(new View.OnClickListener() { // LIMPAR A TELA
+            @Override
+            public void onClick(View v) {
+                txtExpressao.setText("");
+                txtResultado.setText("");
+            }
+        });
+
+        backspace.setOnClickListener(new View.OnClickListener() {// para apagar var por var
+            @Override
+            public void onClick(View v) {
+                TextView expressao = findViewById(R.id.txt_expressao);
+                String string = expressao.getText().toString();
+                if(!string.isEmpty()){
+                    byte var0=0;
+                    int var1 = string.length()-1;
+                    String txtExpressao = string.substring(var0,var1);
+                    expressao.setText(txtExpressao);
+
+                }
+                txtResultado.setText("");
+
+            }
+        });
+
     }
     private void IniciarComponetes(){ // Atribuir valores as IDs
         numero0 = findViewById(R.id.nmb_0);
