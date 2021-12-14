@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button numero0,numero1,numero2,numero3,numero4,numero5,numero6,numero7,numero8,numero9;
     private Button ponto,soma,multiplicacao,subtracao,divisao,igual,botao_limpar;
@@ -61,6 +64,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+        igual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Expression expressao = new ExpressionBuilder(txtExpressao.getText().toString()).build();
+                double resultado = expressao.evaluate();
+                long longResult =(long) resultado;
+                try {
+                    if(resultado == (double)longResult){
+                        txtResultado.setText((CharSequence) String.valueOf(longResult));
+
+                    }else{
+                        txtResultado.setText((CharSequence) String.valueOf(resultado));
+                    }
+                }catch (Exception e){
+
+                }
+            }
+        });
 
     }
     private void IniciarComponetes(){ // Atribuir valores as IDs
@@ -89,16 +110,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void AcrescentarUmaExpressao(String string,boolean limpar_dados){
         if(txtResultado.getText().equals("")){
-            txtExpressao.setText("");
+            txtExpressao.setText(" ");
 
         }
         if(limpar_dados){
-            txtResultado.setText("");
+            txtResultado.setText(" ");
             txtExpressao.append(string);
         }else {
             txtExpressao.append(txtResultado.getText());
             txtExpressao.append(string);
-            txtResultado.setText("");
+            txtResultado.setText(" ");
         }
     }
 
