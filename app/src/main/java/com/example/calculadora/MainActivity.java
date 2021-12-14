@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         IniciarComponetes();
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         numero0.setOnClickListener(this);
         numero1.setOnClickListener(this);
